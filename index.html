@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Countries</title>
+</head>
+<body class="body">
+  <header class="main">
+    <nav class="">
+      <h2 class="where">Where in the world?</h2>
+      <div class="dark">
+        <img src="./assets/moon-stars-fill.svg" alt="">
+        <p class="dark-mode">Dark Mode</p>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="header">
+      <div class="search">
+        <img src="./assets/zoom-out.svg" alt="">
+        <input id="inputField" class="" type="text" placeholder="Search countries">
+      </div>
+
+      <div class="drop-container">
+        <div class="">
+          <div id="dropdown" class="cursor-pointer dropdown">
+            <p class="">Filter by Region</p>
+            <img src="./assets/arrow-down.svg" alt="">
+          </div>
+  
+          <div class="hidden list absolute">
+            <ul class="overflow-y-auto options"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card-container">
+        
+      </div>
+    </section>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+</html>

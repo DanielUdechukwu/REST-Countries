@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+  font-family: 'Raleway';
+}
+
+.search-input {
+  background: transparent;
+}
+
+button {
+  font-family: 'raleway';
+  border: none;
+  outline: none;
+}
+
+input {
+  border: none;
+  outline: none !important;
+}
+
+input::placeholder {
+  font-family: 'Raleway';
+}
+
+option {
+  padding: 1rem 2rem;
+}
+
+header {
+  background: #fff;
+}
+
+nav {
+  display: flex;
+  padding: 1rem;
+}
+
+.where {
+  margin-right: auto;
+}
+
+.dark {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: .5rem;
+  width: 10%;
+}
+
+.dark p, 
+.where {
+  font-weight: 600;
+}
+
+.dark img {
+  height: 1rem;
+}
+
+.dark-mode {
+  cursor: pointer;
+}
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.search {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: #fff;
+  padding: .7rem 1rem;
+  border-radius: .3rem;
+  width: 40%;
+}
+
+.search input {
+  background: transparent;
+  width: 100%;
+}
+
+.search img {
+  height: 1.1rem;
+}
+
+.drop-container {
+  position: relative;
+  width: 20%;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .1rem;
+  background: #fff;
+  padding: .7rem 1rem;
+  border-radius: .3rem;
+}
+
+.dropdown img {
+  height: .6rem;
+}
+
+.active {
+  display: block !important;
+}
+
+.list{
+  width: 100%;
+  background: #fff;
+  margin-top: .5rem;
+  border-radius: .3rem;
+}
+
+.list-item {
+  width: 100%;
+  padding: 1rem;
+}
+
+.list-item:hover {
+  background: #fafafa;
+}
+
+ul{
+  height: 10rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1rem;
+  row-gap: 4rem;
+  margin: 4rem 0;
+}
+
+.card {
+  width: 100%;
+  border-radius: .5rem;
+  background: #fff;
+}
+
+.flag {
+  height: 11rem;
+}
+
+.flag img {
+  height: 100%;
+  width: 100%;
+  border-radius: .5rem .5rem 0 0;
+}
+
+.details {
+  padding: 1rem;
+  padding-bottom: 2.5rem;
+}
+
+.details p {
+  font-weight: 600;
+}
+
+.country {
+  margin: .6rem 0;
+  font-size: 1.3rem;
+}
+
+.population,
+.region,
+.capital {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.population span {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.darkk {
+  background: #2b3743 !important;
+  color: #fff !important;
+}
+
+.dark-main {
+  background: #202d36;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 568px){
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+    margin: 0 auto;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .header > div {
+    margin: 0 0 1rem 0;
+  }
+  .search {
+    width: 100%;
+  }
+  .drop-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dark {
+    width: 30%;
+  }
+  nav {
+    padding: 1.5rem;
+  }
+  .card-container {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .flag {
+    height: 14rem;
+  }
+}
