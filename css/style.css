@@ -195,6 +195,11 @@ ul{
   color: #fff !important;
 }
 
+.light {
+  background: #fafafa !important;
+  color: #000 !important;
+}
+
 .dark-main {
   background: #202d36;
 }

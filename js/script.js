@@ -13,7 +13,8 @@ let darkMode = document.querySelector(".dark-mode");
 let header = document.querySelector('.main'),
 body = document.querySelector('.body'),
 card = document.querySelector('.card'),
-search = document.querySelector('.search')
+search = document.querySelector('.search');
+let isDark = false
 
 const clear = () => {
   inputField.value = " ";
@@ -21,7 +22,7 @@ const clear = () => {
 
 clear();
 
-const showOnLoad = () => {
+const showOnLoad = (color = "light") => {
   fetch("https://restcountries.com/v3.1/all")
   .then((response) => response.json())
   .then((data) => {
@@ -34,7 +35,7 @@ const showOnLoad = () => {
       flag = x.flags.png
 
       cardContainer.innerHTML += `
-        <div class="card">
+        <div class="card ${color}">
         <div class="flag">
           <img src=${flag} alt="" class="">
         </div>
@@ -82,8 +83,12 @@ const updateCountry = (selectedCountry) => {
       population = x.population
       flag = x.flags.png
 
+      let color = ""
+      if (isDark) color = "darkk"
+      else color = ""
+
       cardContainer.innerHTML += `
-        <div class="card darkk">
+        <div class="card ${color}">
         <div class="flag">
           <img src=${flag} alt="" class="">
         </div>
@@ -120,8 +125,12 @@ function doneTyping(value) {
     population = data[0].population
     flag = data[0].flags.png
 
+    let color = ""
+    if (isDark) color = "darkk"
+    else color = ""
+
     cardContainer.innerHTML += `
-      <div class="card darkk">
+      <div class="card ${color}">
       <div class="flag">
         <img src=${flag} alt="" class="">
       </div>
@@ -139,9 +148,23 @@ function doneTyping(value) {
 // Dark mode
 
 darkMode.addEventListener('click', () => {
-  header.classList.toggle('darkk')
-  body.classList.toggle('dark-main')
-  search.classList.toggle('darkk')
-  selectbtn.classList.toggle('darkk')
-  card.classList.toggle('darkk')
+  if (!isDark) {
+    cardContainer.innerHTML = ""
+    showOnLoad("darkk")
+    header.classList.toggle('darkk')
+    body.classList.toggle('dark-main')
+    search.classList.toggle('darkk')
+    selectbtn.classList.toggle('darkk')
+    darkk = classList.toggle('darkk')
+    isDark = true
+  } else {
+    cardContainer.innerHTML = ""
+    showOnLoad()
+    header.classList.toggle('light')
+    body.classList.toggle('light')
+    search.classList.toggle('light')
+    selectbtn.classList.toggle('light')
+    darkk = classList.toggle('light')
+    isDark = false
+  }
 })
